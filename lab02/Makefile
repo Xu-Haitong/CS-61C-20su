@@ -1,3 +1,5 @@
+# := 是覆盖
+# 在 make 语言中, shell 是一个自带的函数, 用于执行一条 shell 命令，并得到其命令输出。
 UNAME_S := $(shell uname -s)
 CC=gcc
 LD=gcc
@@ -30,6 +32,10 @@ $(BIT_OPS_PROG): $(BIT_OPS_OBJS)
 
 $(LFSR_PROG): $(LFSR_OBJS)
 	$(CC) $(CFLAGS) -g -o $(LFSR_PROG) $(LFSR_OBJS) $(LDFLAGS)
+
+#这里是 rule for the vector_test
+$(VECTOR_PROG): $(VECTOR_OBJS)
+	$(CC) $(CFLAGS) -g -o $(VECTOR_PROG) $(VECTOR_OBJS) $(LDFLAGS)
 
 lfsr.c: lfsr.h
 test_lfsr.c: lfsr.h
