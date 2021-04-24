@@ -91,10 +91,10 @@ square:                # f(int) 在这个例子中是完全平方函数
     jr ra
 
 create_default_list:
-    addi sp, sp, -12 # 压入三个参数
-    sw  ra, 0(sp)    # ra 保存当前栈帧 sp
-    sw  s0, 4(sp)    # s0 保存现场
-    sw  s1, 8(sp)    # s1 保存现场
+    addi sp, sp, -12 
+    sw  ra, 0(sp)    
+    sw  s0, 4(sp)    
+    sw  s1, 8(sp)    
     li  s0, 0        # pointer to the last node we handled
     li  s1, 0        # number of nodes handled
 loop:   #do...
@@ -133,7 +133,7 @@ print_newline:
     jr  ra
 
 malloc:
-    addi    a1, a0, 0   # a1 = 8
-    addi    a0, x0 9    # a0 = 9
-    ecall               # 环境调用 ???
+    addi    a1, a0, 0   
+    addi    a0, x0 9    
+    ecall               
     jr  ra
