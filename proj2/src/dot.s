@@ -18,6 +18,10 @@
 # this function exits with error code 6.
 # =======================================================
 dot:
+    #
+    # see dot.c C code with comparison
+    #
+
     li t0, 1
     blt a2, t0, exit_5
     blt a3, t0, exit_6

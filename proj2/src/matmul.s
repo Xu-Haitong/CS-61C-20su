@@ -23,6 +23,9 @@
 #	None (void), sets d = matmul(m0, m1)
 # =======================================================
 matmul:
+    #
+    # see matmul.c C code with comparison
+    #
 
     # Error checks
     li t0, 1             # t0 = 1
@@ -33,7 +36,7 @@ matmul:
     bne a2, a4, exit_4
 
     # Prologue
-    # we will call dot(int *, int *, int, int, int), so ra will change during call
+    # we will call dot(int *, int *, int, int, int), so ra will change during calling
     addi sp, sp, -4
     sw ra, 0(sp)
 

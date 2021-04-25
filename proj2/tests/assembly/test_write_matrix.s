@@ -7,7 +7,18 @@ file_path: .asciiz "outputs/test_write_matrix/student_write_outputs.bin"
 
 .text
 main:
+    # Linux :   java -jar ../tools/venus.jar assembly/test_write_matrix.s
+    # Windows : java -jar ..\tools\venus.jar assembly\test_write_matrix.s
+
     # Write the matrix to a file
+    la s0 file_path
+    la s1 m0
+    mv a0 s0
+    mv a1 s1
+    li a2 3
+    li a3 3
+    jal ra, write_matrix
 
 
     # Exit the program
+    jal ra, exit
